@@ -17,7 +17,7 @@
     /*<!-- position:fixed; --> */
   }
   #alltutorials{
-    width:900px;
+    width:800px;
     float:left;
     /*padding:10px;*/
   }
@@ -50,7 +50,7 @@ $(function(){
 
    // jQuery methods go here...
     $(window).on('scroll', function () {
-      if ($(window).scrollTop() > 400) {
+      if ($(window).scrollTop() > 500) {
         $('#learn-contents').addClass('fixed');
         $('#alltutorials').removeClass('oldpadding');
         $('#alltutorials').addClass('xpadding-left');
@@ -65,9 +65,15 @@ $(function(){
 });
 </script>
 
-<h1 id="firstHeading" class="firstHeading" style="color: #000000; font-weight: normal; margin: 0px 0px 0.1em; overflow: hidden; padding-top: 0px; padding-bottom: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #aaaaaa; width: auto; font-size: 1.6em; line-height: 1.2em; font-family: sans-serif; background: none;"><span dir="auto">Learn Genomics Analysis (Tutorials and Protocols)</span></h1>
+<h1 id="firstHeading" class="firstHeading" style="color: #000000; font-weight: normal; margin: 0px 0px 0.1em; overflow: hidden; padding-top: 0px; padding-bottom: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #aaaaaa; width: auto; font-size: 1.6em; line-height: 1.2em; font-family: sans-serif; background: none;"><span dir="auto">Tutorials and Protocols</span></h1>
 <p> </p>
 <div class="Learn-header" id="learn-header">
+  The GVL project team have produced a number of tutorials and analysis protocols for:
+  <ul>
+    <li>Galaxy</li>
+    <li>Genomics Analysis</li>
+  </ul>
+  There are a combination of basic and advanced galaxy tutorials and command line tutorials which give step by step instructions for an example analysis. Protocols outline the analysis methods and suggest and compare tools for each step rather than prescribe them.
   This is the header text, it will have a description of the page later on
 </div>
 <div class="page-frame"id="learn-page-frame">
@@ -88,7 +94,7 @@ $(function(){
 
     <div class="tutorial-section" id="galaxy">
       <h2><a name="galaxy-tutorials"></a>Learn Galaxy</h2>
-      Blurb
+      The tutorials listed here are designed to teach beginnershow to use the Galaxy analysis platform. There are also a number of links to other resources from outside the GVL.
       <div class="tutorial-subsection" id="galaxy101">
         <h3><a href="https://docs.google.com/document/d/1wsdJDYfjZVg2uJxm9AHi_j0mY3X1M1F4gB-elkuYL7c/pub">Introduction to Galaxy</a></h3>
         <ul>
