@@ -1,0 +1,304 @@
+
+<style>
+  #learn-header{
+    background-color:lightgrey;
+    padding:5px;
+
+  }
+  #learn-contents{
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:200px;
+    float:left;
+    padding:5px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    /*<!-- position:fixed; --> */
+  }
+  #alltutorials{
+    width:900px;
+    float:left;
+    /*padding:10px;*/
+  }
+
+  .tutorial-section{
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    border-spacing: 10px;
+    padding: 10px;
+
+  }
+
+  .fixed{
+    top: 10px;
+    position: fixed;
+  }
+
+  .xpadding-left{
+    padding-left: 227px;
+
+  }
+
+  .oldpadding{
+    padding-left: 15px;
+  }
+
+</style>
+<script>
+$(function(){
+
+   // jQuery methods go here...
+    $(window).on('scroll', function () {
+      if ($(window).scrollTop() > 400) {
+        $('#learn-contents').addClass('fixed');
+        $('#alltutorials').removeClass('oldpadding');
+        $('#alltutorials').addClass('xpadding-left');
+      }
+      else {
+        $('#learn-contents').removeClass('fixed');
+        $('#alltutorials').removeClass('xpadding-left');
+        $('#alltutorials').addClass('oldpadding');
+      }
+    });
+
+});
+</script>
+
+<h1 id="firstHeading" class="firstHeading" style="color: #000000; font-weight: normal; margin: 0px 0px 0.1em; overflow: hidden; padding-top: 0px; padding-bottom: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #aaaaaa; width: auto; font-size: 1.6em; line-height: 1.2em; font-family: sans-serif; background: none;"><span dir="auto">Learn Genomics Analysis (Tutorials and Protocols)</span></h1>
+<p> </p>
+<div class="Learn-header" id="learn-header">
+  This is the header text, it will have a description of the page later on
+</div>
+<div class="page-frame"id="learn-page-frame">
+  <div class="gvl-page-index" id="learn-contents">
+    <ul>
+      <li><a href="#galaxy-tutorials">Learn Galaxy</a></li>
+      <li><a href="#rnaseq">RNASeq</a></li>
+      <li><a href="#variantdetection">Variant Detection</a></li>
+      <li><a href="#assembly">Assembly</a></li>
+      <li><a href="#chipseq">ChIP Seq</a></li>
+      <li><a href="#metagenomics">Metagenomics</a></li>
+      <li><a href="#smallrnas">Small RNAs</a></li>
+      <li><a href="#amplicons">Amplicons</a></li>
+    </ul>
+  </div>
+
+  <div class="tutorial-frame" id="alltutorials">
+
+    <div class="tutorial-section" id="galaxy">
+      <h2><a name="galaxy-tutorials"></a>Learn Galaxy</h2>
+      Blurb
+      <div class="tutorial-subsection" id="galaxy101">
+        <h3><a href="https://docs.google.com/document/d/1wsdJDYfjZVg2uJxm9AHi_j0mY3X1M1F4gB-elkuYL7c/pub">Introduction to Galaxy</a></h3>
+        <ul>
+          <li>A tutorial for those who are very new to Galaxy.</li>
+        </ul>
+      </div>
+      <div class="tutorial-subsection" id="galaxy102">
+        <h3><a href="https://docs.google.com/document/d/1t7vVqa3mdeZYPv5-8hiHBFBYhNiynV_3mWByno9-wUM/pub">Intermediate Galaxy</a></h3>
+        <ul>
+          <li>Using Histories and Workflows for those with some Galaxy knowledge.</li>
+        </ul>
+      </div>
+      <div class="tutorial-subsection" id="gtn">
+        <h3>Other Galaxy Resources</h3>
+        <ul>
+          <li>The Galaxy project website has any tutorials and screencasts about using Galaxy and the tools, and developing new tools.
+            <ul>
+              <li><a href="http://wiki.galaxyproject.org/Learn">Tutorials</a></li>
+              <li><a href="http://wiki.galaxyproject.org/Learn/Screencasts">Screencasts</a></li>
+            </ul>
+          </li>
+          <li><a href="http://www.qfab.org/">Queensland Facility for Advanced Bioinformatics</a> training resources</li>
+          <li><a href="http://www.vlsci.org.au/lscc">Victorian Life Sciences Computation Initiative</a> training resources</li>
+          <li>Global resources of the <a href="https://wiki.galaxyproject.org/Teach">Galaxy Training Network</a>.</li>
+        </ul>
+      </div>
+    </div>
+    <br>
+    <div class="tutorial-section" id="RNASeq">
+      <h2><a name="rnaseq"></a>RNASeq</h2>
+  Measuring the something something something - add a bit of a blurb here
+      <div class="tutorial-subsection" id="RNASeq-basic">
+        <h3><a href="https://docs.google.com/document/pub?id=1KbTiBHtvHLfPRZ39AY3uriazrINA8TJzgjjwn1zPP7Y">Basic Galaxy Tutorial</a></h3>
+        <ul>
+          <li>RNA-Seq tutorial based on <a href="http://www.nature.com/protocolexchange/protocols/2327">Trapnell et al. (2012) Nature Protocols</a>
+          <li>In this tutorial we cover the concepts of RNA-Seq differential gene expression (DGE) analysis using a very small synthetic dataset from a well studied organism.
+        </ul>
+      </div>
+
+      <div class="tutorial-subsection" id="RNASeq-advanced">
+        <h3><a href="https://docs.google.com/document/d/1fQ1XfeOKhezJUDTzMXtZVY20c3RGoHe-HLvFOGzqU4s/pub">Advanced Galaxy Tutorial</a></h3>
+        <ul>
+          <li>A more advanced RNASeq tutorial</li>
+          <li>In this tutorial we compare the performance of three statistically-based differential expression tools:
+            <ul>
+              <li>CuffDiff
+              <li>EdgeR
+              <li>DESeq2
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tutorial-subsection" id="RNASeq-commandline">
+        <h3>Advanced Command Line Tutorial</h3>
+        <ul>
+          <li>An advanced RNASeq tutorial using the linux commmand line.</li>
+          <li>Graphical Output with CummeRbund introduces some basic commands using the cummeRbund package of the R programming language. You will learn how to produce graphical output from RNA-Seq analysis previously done using a Cuffdiff analysis. You have three options for the required software installation (how to is explained in the Tutorial):</li>
+        </ul>
+        There are three ways you can do this tutorial:
+        <ul>
+          <li><a href="https://docs.google.com/document/d/1ayJXtgBP1OXtnV7o7lq4QHKMNk5SdPHFq4hGkqndBtI/pub"><b>On your PC:</b></a> You need to install R, RStudio and cummeRbund on your PC; and load the data onto your PC.</li>
+          <li><a href="https://docs.google.com/document/d/1ayJXtgBP1OXtnV7o7lq4QHKMNk5SdPHFq4hGkqndBtI/pub"><b>On a Personal</b></a> GVL: You need to launch a Personal GVL; install cummeRbund; and load the data. This will avoid pitfalls you may experience when trying to install R and RStudio on your PC.</li>
+          <li><a href="https://docs.google.com/document/d/1ayJXtgBP1OXtnV7o7lq4QHKMNk5SdPHFq4hGkqndBtI/pub"><b>On a Personal GVL linked to Galaxy:</b></a> You need to launch a Personal GVL; install cummeRbund; link to Galaxy and perform the RNA seq basic tutorial. This demonstrates advanced use of GVL, using RStudio to access Galaxy data.</li>
+        </ul>
+      </div>
+
+    </div>
+    <br>
+    <div class="tutorial-section" id="variant-detection">
+      <h2><a name="variantdetection"></a>Variant Calling</h2>
+      Variant calling is the process of finding differences in your read data set from a reference sequence. It involves stuff etc...
+
+      <div class="tutorial-subsection" id="variant-basic">
+        <h3><a href="https://docs.google.com/document/pub?id=1ZRzrjjOCvtAu3m-IKL-rbJ1f4On60dDL_IEwG7oejdI">Basic Galaxy Tutorial<a/></h3>
+        <ul>
+          <li>In this tutorial we cover the concepts of detecting small variants (SNVs and indels) in human genomic DNA using a small set of reads from chromosome 22.</li>
+        </ul>
+      </div>
+
+      <div class="tutorial-subsection" id="variant-advanced">
+        <h3><a href="https://docs.google.com/document/pub?id=1CuKkKylVDb03tnN7RSWl5EUzleetn0ctjmvaidPKLxM">Advanced Galaxy Tutorial</a></h3>
+        <ul>
+          <li>In this tutorial we compare the performance of three statistically-based variant detection tools:
+            <ul>
+              <li>SAMtools: Mpileup</li>
+              <li>GATK: Unified Genotyper</li>
+              <li>FreeBayes</li>
+            </ul>
+          </li>
+          <li>Each of these tools takes as its input a BAM file of aligned reads and generates a list of likely variants in VCF format
+      </div>
+
+      <div class="tutorial-protocol" id="variant-pipelines">
+        <h3>Pipelines</h3>
+        Pipelines are for those who are comfortable with using the UNIX command line; and often allow more control over branching and iteration logic.
+
+        <a href="https://github.com/claresloggett/variant_calling_pipeline"><b>WGS/exome GATK-based variant calling pipeline</b></a>
+        <ul>
+          <li>This is a basic variant-calling and annotation pipeline developed at the Victorian Life Sciences Computation Initiative (VLSCI), University of Melbourne.</li>
+          <li>It is based around BWA, GATK and ENSEMBL and was originally designed for human (or similar) data.</li>
+          <li>The master branch is configured for WGS data; there is an exome branch configured for variant calling in exome data.</li>
+          <li>To run the pipeline you will need Rubra: <a href="https://github.com/bjpop/rubra">https://github.com/bjpop/rubra</a>. Rubra uses the python Ruffus library: <a href="http://www.ruffus.org.uk/">http://www.ruffus.org.uk/</a>.</li>
+        </ul>
+      </div>
+
+      <div class="tutorial-protocol" id="variant-protocols">
+        <h3>Protocols</h3>
+        <b><a href="https://docs.google.com/document/d/1lfDYNzHjfDA1pHTHd-0w3xHhg7L4TipT1gRfzgiV8es/pub">Familial Variant Calling</a></b>
+        <ul>
+          <li>In this protocol we discuss and outline the process of calling familial related mutations.</li>
+        </ul>
+        <b><a href="https://docs.google.com/document/d/1PIhm8NrFGaSK0hxpDcp8wUOz11ZkOaHIrpnJshMgDec/pub">Somatic Variant Calling</a></b>
+        <ul>
+          <li>In this protocol we discuss and outline the process of identifying somatic variants or mutations.</li>
+        </ul>
+      </div>
+
+    </div>
+    <br>
+    <div class="tutorial-section" id="assembly">
+      <h2><a name="assembly"></a>Assembly</h2>
+        Blurb
+      <div class="tutorial-subsection" id="assembly-tutorial">
+        <h3><a href="https://docs.google.com/document/pub?id=1N3AB9ptISUu4zULqe1kXpVF0BDyGb5f5yzxWSJd_WNM">Basic Galaxy Tutorial</a></h3>
+        <ul>
+          <li>In this tutorial we carry out de novo assembly of a microbial genome.</li>
+          <li>We have also written a De novo Genome Assembly for Illumina Data Protocol, for a more generic description of the method.</li>
+        </ul>
+      </div>
+
+      <div class="tutorial-protocol" id="assembly-protocol">
+        <h3><a href="https://docs.google.com/document/d/1xs-TI5MejQARqo0pcocGlymsXldwJbJII890gnmjI0o/pub">Assembly Protocol</a></h3>
+        <ul>
+          <li>De novo Genome Assembly for Illumina Data</li>
+          <li>In this protocol we discuss and outline the process of de novo assembly for small to medium sized genomes.</li>
+          <li>Use our Genome assembly tutorial to learn a specific case of using Galaxy to carry out de novo assembly of a microbial genome.</li>
+        </ul>
+      </div>
+
+    </div>
+    <br>
+    <div class="tutorial-section" id="chipseq">
+      <h2><a name="chipseq"></a>ChIP Seq</h2>
+      Blurb<br>
+      <a href="https://docs.google.com/document/d/1FPmKuUZ-mgIT88E_uhs66QckwKcf5f_K49Zfg6SCB4s/pub">Background material:</a> ChIP-Seq, or ChIP-sequencing, is an approach used for analysis of protein binding sites in genomes. It utilises chromatin immunoprecipitation (ChIP) and high-throughput sequencing technology.
+
+      <div class="tutorial-subsection" id="chipseq-basic">
+        <h3><a href="https://docs.google.com/document/d/12pTphYcSUNnlorQWHBWo2LwxHGdZzR5Pxa5IjFkIHHk/pub">Basic Galaxy Tutorial</a></h3>
+        <ul>
+          <li>Introduction to ChIP-Seq analysis</li>
+          <li>We cover the concepts of chromatin immunoprecipitation followed by massively parallel sequencing using a small subset of data obtained in mouse cell culture.</li>
+        </ul>
+      </div>
+
+      <div class="tutorial-subsection" id="chipseq-advanced">
+        <h3><a href="https://docs.google.com/document/d/1KyHPoD6X_u3KfHCZuBlgNOaZmo7Tob2q-JdujhkF06Q/pub">Advanced Galaxy Tutorial</a></h3>
+        <ul>
+          <li>ChIP-Seq and discovery of motifs This tutorial includes:
+            <ul>
+              <li>peak calling using MACS2 with experimental and control datasets (CTCF ChIP-Seq data from mouse cell line)</li>
+              <li>data exchange between Galaxy and UCSC Table Browser</li>
+              <li>prediction of a nucleotide motif (a binding site consensus for CTCF protein) in sequences from the identified peak regions using MEME software.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tutorial-protocol" id="chipseq-protocol">
+        <h3><a href="https://docs.google.com/document/d/1UPJC8dsiDeP5R9MH9U0IvoDgPF2Q3EOstAuzS3e6WCE/pub">ChIP-Seq Protocol</a></h3>
+        <ul>
+          <li>In this protocol we discuss ChIP-Seq: a method to analyze the interaction between proteins and DNA.</li>
+        </ul>
+      </div>
+    </div>
+    <br>
+    <div class="tutorial-section" id="metagenomics">
+      <h2><a name="metagenomics"></a>Metagenomics</h2>
+      Blurb
+      <div class="tutorial-subsection" id="16S-rRNA">
+        <h3><a href="https://docs.google.com/document/d/1A5xShJpmS97LY8jV5p1buVDHzx_BqJIe3mkfZrTCETQ/pub">16S rRNA Analysis Galaxy Tutorial</a></h3>
+        <ul>
+          <li>In this tutorial we cover the concepts of metagenomics analysis in 16S rRNA.</li>
+        </ul>
+      </div>
+    </div>
+    <br>
+    <div class="tutorial-section" id="small-rnas">
+      <h2><a name="smallrnas"></a>Small RNAs</h2>
+      Blurb
+      <div class="tutorial-subsection" id="smallrnas-basic">
+        <h3><a href="https://docs.google.com/document/d/1WAObJr7M0m8U-2ku-0Y0Sdt_IHmqd1h8WaJHPhnJ1lM/pub">Basic Galaxy Tutorial</a></h3>
+        <ul>
+          <li>Quality control for small RNA</li>
+          <li>This tutorial covers initial steps of the workflow for analysis of short RNA expression such as a quality control of the raw reads, processing of the raw reads for the subsequent analysis and initial quality assessment of the library.</li>
+        </ul>
+      </div>
+    </div>
+    <br>
+    <div class="tutorial-section" id="amplicons">
+      <h2><a name="amplicons"></a>Amplicons</h2>
+      Blurb
+      <div class="tutorial-protocol" id="amplicons-protocol">
+        <h3><a href="https://docs.google.com/document/d/1uW7JzxG86QzS92hTyeuNsLhX_d1XFbaZPSjh7jWxcSg/pub">Amplicon Alignment Protocol</a></h3>
+        <ul>
+          <li>In this protocol we discuss and outline the process of aligning custom amplicons using primers for high precision.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <br style="clear:both;"/>
+</div>
