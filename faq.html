@@ -1,93 +1,169 @@
-<h2>Uploading large files to your server</h2>
-<p>Files can be uploaded to your server using FTP or GenomeSpace.</p>
-<h3>FTP</h3>
-<p>Files larger than 2GB can be uploaded to Galaxy only by FTP.</p>
-<p><strong>From the Command Line</strong> (e.g. in MS Windows, call up the Command Prompt. In Linux, ssh login).</p>
-<ul>
-<li>Change to the directory containing your file;</li>
-<li>Type <em>ftp &lt;ipaddress&gt;</em> e.g. <em>ftp galaxy-qld.genome.edu.au</em>;</li>
-<li>Enter your Galaxy user id and password; then</li>
-<li>Type <em>put &lt;filename&gt;</em> e.g. put <em>CM10005.FASTA.</em></li>
-</ul>
-<p>The file is now in the Galaxy FTP directory under your user ID (no one else can see it)</p>
-<ul>
-<li>Go to your Galaxy server e.g. <a class="external free" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">http://galaxy-qld.genome.edu.au/;</a></li>
-<li>Select Get Data / Upload File. Your file will be displayed in the list of "Files uploaded by ftp"; then</li>
-<li>Select it, Execute.</li>
-</ul>
-<p><strong>Using Internet Explorer</strong></p>
-<ul>
-<li>Enter <em><a class="external free" href="ftp://130.56.248.182" rel="nofollow">ftp://</a>&lt;ipaddress&gt;</em> into the browser e.g. <em><a class="external free" href="ftp://galaxy-qld.genome.edu.au" rel="nofollow">ftp://galaxy-qld.genome.edu.au;</a></em></li>
-<li>Enter your Galaxy user ID and password to finish logging in to the FTP site;</li>
-<li>Select "Page" Menu drop-down within Internet Explorer;</li>
-<li>Select "Open FTP site in File Explorer"; then</li>
-<li>Login again</li>
-</ul>
-<p>From another file explorer window, drag and drop your file into the ftp window. The file is now in the Galaxy FTP directory under your user ID (no one else can see it).</p>
-<ul>
-<li>Go to your Galaxy server e.g. <a class="external free" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">http://galaxy-qld.genome.edu.au/;</a></li>
-<li>Select Get Data / Upload File. Your file will be displayed in the list of "Files uploaded by ftp"; then</li>
-<li>Select it, Execute</li>
-</ul>
-<p>Galaxy will unpack compressed (.gz) files. Please do not upload many compressed files simultaneously by FTP because you may run out of the disk space in your allocation. Some organisations have very strict firewall settings that prevent FTP data transfer. To test FTP, upload a small compressed (.gz) file.</p>
-<h3>GenomeSpace</h3>
-<p>Refer to <a href="http://www.genomespace.org/" target="_blank" title="Genome Space">Genome Space</a> for details.</p>
-<h2>Transferring Galaxy history between instances</h2>
-<p>There is no nice clean way to do this in Galaxy because Galaxy zips it up and downloads it for you, but you cannot upload the archived history file to a new instance, you can only import a URL history archive. (browsers can't upload files larger than 2GB and real histories are likely to be large).</p>
-<p>Import from URL works, but it is fussy and it does not work immediately. It starts a background job that downloads and unzips the history archive. If there is a problem, you never find out. You only know it worked if you check back some time later and there is a new history in your list.</p>
-<p>First, download the archive, then put it somewhere that it can be accessed by URL:</p>
-<ul>
-<li>Select 'Export to file' from the History menu (little cog icon at top of history);</li>
-<li>A URL appears which doesn't yet work, because the history has to be archived first and this happens invisibly in the background (unless you've exported the history previously). If the history is already archived, then when you select 'Export to file' you don't get this link, you just get the downloaded file;</li>
-<li>After some indeterminate period related to the size of the history, the history archive will be available for download at this URL, or through the 'Export to file';</li>
-<li>Download the file, and copy or move it to a web-accessible store, for example:</li>
-<ol>
-<li>A web server on the GVL (e.g. your html_public directory);</li>
-<li>The Object Store and make it publicly available; or</li>
-<li>Aarnet's CloudStor can also make a file available as a URL.</li>
-</ol></ul>
-<h2>Download files from Galaxy server to a specific location</h2>
-<p>You can save your datasets from Galaxy to any location using 'curl' or 'wget' commands. For curl do the following:</p>
-<ul>
-<li>Open a UNIX terminal and navigate to the place you want to store your files;</li>
-<li>In Galaxy history &gt; right mouse click on 'Save' icon &gt; Copy Link Address; then</li>
-<li>In your UNIX terminal type: curl <em>link to your file</em> &gt; <em>name of destination file</em>.</li>
-</ul>
-<p>Alternatively, you can download via your browser:</p>
-<ul>
-<li>In Galaxy history &gt; right mouse click on 'Save' icon &gt; Copy Link Address</li>
-<li>Paste the URL into your web browser to download the file.</li>
-</ul>
-<h2>De Novo transcript assembly with Trinity and read normalisation</h2>
-<p>Trinity read normalisation improves the run time for transcript assembly, and it is recommended for large datasets.</p>
-<ul>
-<li>Example of recommended transcript assembly with Trinity on <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Histories &gt; De novo transcript assembly using Trinity package.</li>
-<li>The workflow for this procedure on <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Workflows &gt; De novo transcript assembly using Trinity package.</li>
-<li>The workflow can be used with FASTQ data in Shared Data &gt; Published Histories &gt; Data for Trinity.</li>
-</ul>
-<p>Note that the read normalisation does not like space characters in read names. Unfortunately, many public datasets do contains space characters in read names. To transform read names:</p>
-<ul>
-<li>convert FASTQ to Tabular and split names in n+1 columns, where n = number of space character in read names</li>
-<li>convert Tabular to FASTQ using only one column for read names.</li>
-</ul>
-<ul>
-<li>Example of executing this transformation on <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Histories &gt; Preparation of FASTQ reads for Trinity read normalisation.</li>
-<li>Workflow for this transformation on <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Workflows &gt; Preparation of FASTQ reads for Trinity read normalisation.</li>
-</ul>
-<h2>MEME Errors</h2>
-<p>MEME has a limit on total length of sequences: "The sequences may contain no more than 60,000 characters total and must be in FASTA format".</p>
-<p>In some cases sequences can be trimmed on both sides without compromising protein binding sites. Workflow 'Trim multiple sequences on both ends by 10nt' is available on <a href="http://galaxy-qld.genome.edu.au/" target="_blank">Galaxy-qld</a> in Shared Data &gt; Published Workflows.</p>
-<h2>GVL Version</h2>
-<p>A GVL analysis server consists of three components:</p>
-<ul>
-<li>a <em>Machine Image</em>;</li>
-<li>a <em>Galaxy File System</em>; and</li>
-<li>Genome Index reference data</li>
-</ul>
-<p>GVL periodically releases new versions of the <em>Machine Image</em> and the <em>Galaxy File System</em>, as new features are added to the GVL.</p>
-<ul>
-<li>The <em>Machine Image</em> version is chosen as an Advanced Option on the launch page (<a href="https://launch.genome.edu.au">launch.genome.edu.au</a>). You can see what version you have on the NeCTAR dashboard display of your Instances.</li>
-<li>You don't have control of the Galaxy File System version. You can see what version you have from the banner on your Galaxy (eg "Galaxy / GVL 3.05")</li>
-<li>Genome Index reference data is a shared file system amongst all GVLs: versioning does not apply.</li>
-</ul>
-<p>For more information refer to <a href="launch-version">GVL versions.</a></p>
+<div class="page-frame" id="learn-page-frame">
+  <div id="page-tableofcontents" class="gvl-page-index">
+    <ul>
+      <li>
+        <a href="#largefiles">Uploading Large Files</a>
+      </li>
+      <li>
+        <a href="#transfer-galaxy">Transferring Galaxy History</a>
+      </li>
+      <li>
+        <a href="#downloading-galaxy">Downloading Galaxy Files</a>
+      </li>
+      <li>
+        <a href="#denovo">De Novo Transcript Assembly</a>
+      </li>
+      <li>
+        <a href="#meme">MEME Errors</a>
+      </li>
+      <li>
+        <a href="#version">GVL Version</a>
+      </li>
+    </ul>
+  </div>
+  <p></p>
+  <div id="page-main" class="tutorial-frame oldpadding">
+    <div class="tutorial-section" id="largefiles">
+      <h2>Uploading large files to your server</h2>
+      <p>Files can be uploaded to your server using FTP or GenomeSpace.</p>
+      <h3>FTP</h3>
+      <p>Files larger than 2GB can be uploaded to Galaxy only by FTP.</p>
+      <p>
+      <strong>From the Command Line</strong>(e.g. in MS Windows, call up the Command Prompt. In Linux, ssh login).</p>
+      <ul>
+        <li>Change to the directory containing your file;</li>
+        <li>Type 
+        <em>ftp &lt;ipaddress&gt;</em>e.g. 
+        <em>ftp galaxy-qld.genome.edu.au</em>;</li>
+        <li>Enter your Galaxy user id and password; then</li>
+        <li>Type 
+        <em>put &lt;filename&gt;</em>e.g. put 
+        <em>CM10005.FASTA.</em></li>
+      </ul>
+      <p>The file is now in the Galaxy FTP directory under your user ID (no one else can see it)</p>
+      <ul>
+        <li>Go to your Galaxy server e.g. 
+        <a class="external free" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">http://galaxy-qld.genome.edu.au/;</a></li>
+        <li>Select Get Data / Upload File. Your file will be displayed in the list of "Files uploaded by ftp"; then</li>
+        <li>Select it, Execute.</li>
+      </ul>
+      <p>
+        <strong>Using Internet Explorer</strong>
+      </p>
+      <ul>
+        <li>Enter 
+        <em>
+        <a class="external free" href="ftp://130.56.248.182" rel="nofollow">ftp://</a>&lt;ipaddress&gt;</em>into the browser e.g. 
+        <em>
+          <a class="external free" href="ftp://galaxy-qld.genome.edu.au" rel="nofollow">ftp://galaxy-qld.genome.edu.au;</a>
+        </em></li>
+        <li>Enter your Galaxy user ID and password to finish logging in to the FTP site;</li>
+        <li>Select "Page" Menu drop-down within Internet Explorer;</li>
+        <li>Select "Open FTP site in File Explorer"; then</li>
+        <li>Login again</li>
+      </ul>
+      <p>From another file explorer window, drag and drop your file into the ftp window. The file is now in the Galaxy FTP directory under your user ID (no one else can see it).</p>
+      <ul>
+        <li>Go to your Galaxy server e.g. 
+        <a class="external free" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">http://galaxy-qld.genome.edu.au/;</a></li>
+        <li>Select Get Data / Upload File. Your file will be displayed in the list of "Files uploaded by ftp"; then</li>
+        <li>Select it, Execute</li>
+      </ul>
+      <p>Galaxy will unpack compressed (.gz) files. Please do not upload many compressed files simultaneously by FTP because you may run out of the disk space in your allocation. Some organisations have very strict firewall settings that prevent FTP data transfer. To test FTP, upload a small compressed (.gz) file.</p>
+      <h3>GenomeSpace</h3>
+      <p>Refer to 
+      <a href="http://www.genomespace.org/" target="_blank" title="Genome Space">Genome Space</a>for details.</p>
+    </div>
+    <br />
+    <div class="tutorial-section" id="transfer-galaxy">
+      <h2>Transferring Galaxy history between instances</h2>
+      <p>There is no nice clean way to do this in Galaxy because Galaxy zips it up and downloads it for you, but you cannot upload the archived history file to a new instance, you can only import a URL history archive. (browsers can't upload files larger than 2GB and real histories are likely to be large).</p>
+      <p>Import from URL works, but it is fussy and it does not work immediately. It starts a background job that downloads and unzips the history archive. If there is a problem, you never find out. You only know it worked if you check back some time later and there is a new history in your list.</p>
+      <p>First, download the archive, then put it somewhere that it can be accessed by URL:</p>
+      <ul>
+        <li>Select 'Export to file' from the History menu (little cog icon at top of history);</li>
+        <li>A URL appears which doesn't yet work, because the history has to be archived first and this happens invisibly in the background (unless you've exported the history previously). If the history is already archived, then when you select 'Export to file' you don't get this link, you just get the downloaded file;</li>
+        <li>After some indeterminate period related to the size of the history, the history archive will be available for download at this URL, or through the 'Export to file';</li>
+        <li>Download the file, and copy or move it to a web-accessible store, for example:</li>
+        <ol>
+          <li>A web server on the GVL (e.g. your html_public directory);</li>
+          <li>The Object Store and make it publicly available; or</li>
+          <li>Aarnet's CloudStor can also make a file available as a URL.</li>
+        </ol>
+      </ul>
+    </div>
+    <br />
+    <div class="tutorial-section" id="downloading-galaxy">
+      <h2>Download files from Galaxy server to a specific location</h2>
+      <p>You can save your datasets from Galaxy to any location using 'curl' or 'wget' commands. For curl do the following:</p>
+      <ul>
+        <li>Open a UNIX terminal and navigate to the place you want to store your files;</li>
+        <li>In Galaxy history &gt; right mouse click on 'Save' icon &gt; Copy Link Address; then</li>
+        <li>In your UNIX terminal type: curl 
+        <em>link to your file</em>&gt; 
+        <em>name of destination file</em>.</li>
+      </ul>
+      <p>Alternatively, you can download via your browser:</p>
+      <ul>
+        <li>In Galaxy history &gt; right mouse click on 'Save' icon &gt; Copy Link Address</li>
+        <li>Paste the URL into your web browser to download the file.</li>
+      </ul>
+    </div>
+    <br />
+    <div class="tutorial-section" id="denovo">
+      <h2>De Novo transcript assembly with Trinity and read normalisation</h2>
+      <p>Trinity read normalisation improves the run time for transcript assembly, and it is recommended for large datasets.</p>
+      <ul>
+        <li>Example of recommended transcript assembly with Trinity on 
+        <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Histories &gt; De novo transcript assembly using Trinity package.</li>
+        <li>The workflow for this procedure on 
+        <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Workflows &gt; De novo transcript assembly using Trinity package.</li>
+        <li>The workflow can be used with FASTQ data in Shared Data &gt; Published Histories &gt; Data for Trinity.</li>
+      </ul>
+      <p>Note that the read normalisation does not like space characters in read names. Unfortunately, many public datasets do contains space characters in read names. To transform read names:</p>
+      <ul>
+        <li>convert FASTQ to Tabular and split names in n+1 columns, where n = number of space character in read names</li>
+        <li>convert Tabular to FASTQ using only one column for read names.</li>
+      </ul>
+      <ul>
+        <li>Example of executing this transformation on 
+        <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Histories &gt; Preparation of FASTQ reads for Trinity read normalisation.</li>
+        <li>Workflow for this transformation on 
+        <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Workflows &gt; Preparation of FASTQ reads for Trinity read normalisation.</li>
+      </ul>
+    </div>
+    <br />
+    <div class="tutorial-section" id="meme">
+      <h2>MEME Errors</h2>
+      <p>MEME has a limit on total length of sequences: "The sequences may contain no more than 60,000 characters total and must be in FASTA format".</p>
+      <p>In some cases sequences can be trimmed on both sides without compromising protein binding sites. Workflow 'Trim multiple sequences on both ends by 10nt' is available on 
+      <a href="http://galaxy-qld.genome.edu.au/" target="_blank">Galaxy-qld</a>in Shared Data &gt; Published Workflows.</p>
+    </div>
+    <br />
+    <div class="tutorial-section" id="version">
+      <h2>GVL Version</h2>
+      <p>A GVL analysis server consists of three components:</p>
+      <ul>
+        <li>a 
+        <em>Machine Image</em>;</li>
+        <li>a 
+        <em>Galaxy File System</em>; and</li>
+        <li>Genome Index reference data</li>
+      </ul>
+      <p>GVL periodically releases new versions of the 
+      <em>Machine Image</em>and the 
+      <em>Galaxy File System</em>, as new features are added to the GVL.</p>
+      <ul>
+        <li>The 
+        <em>Machine Image</em>version is chosen as an Advanced Option on the launch page (
+        <a href="https://launch.genome.edu.au">launch.genome.edu.au</a>). You can see what version you have on the NeCTAR dashboard display of your Instances.</li>
+        <li>You don't have control of the Galaxy File System version. You can see what version you have from the banner on your Galaxy (eg "Galaxy / GVL 3.05")</li>
+        <li>Genome Index reference data is a shared file system amongst all GVLs: versioning does not apply.</li>
+      </ul>
+      <p>For more information refer to 
+      <a href="launch-version">GVL versions.</a></p>
+    </div>
+    <br style="clear:both;" />
+    <script>/* A script which makes the menu section of the page change to a fixed position when the window is scrolled to make the header disappear off the top of the page. The menu is then fixed in the top left position while allowing the tutorials to scroll by. */ $(function(){ $(window).on('scroll', function () { if ($(window).width() &gt; 1100){ if ($(window).scrollTop() &gt; 310) { $('#page-tableofcontents').addClass('fixed'); $('#page-main').removeClass('oldpadding'); $('#page-main').addClass('xpadding-left'); } else { $('#page-tableofcontents').removeClass('fixed'); $('#page-main').removeClass('xpadding-left'); $('#page-main').addClass('oldpadding'); } } }); });</script>
+  </div>
+</div>
