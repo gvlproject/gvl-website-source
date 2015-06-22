@@ -45,44 +45,81 @@ are described below.</p>
     </ul>
     </div>
     <div id="page-main">
-        <a name="dashboard"><h2>GVL Dashboard</h2></a>
+        <a name="dashboard"></a><h2>GVL Dashboard</h2>
 
         <p>The GVL Dashboard is the home page of your GVL instance.
             It shows the status of each service, gives a link to each running service.</p>
 
-        <a name="cloudman"><h2>CloudMan</h2></a>
+        <a name="cloudman"></a><h2>CloudMan</h2>
 
         <p>CloudMan gives you administrative control over your virtual machine.
             It also allows you to add worker nodes to your instance to build a virtual
-            cluster-in-the-cloud. You can find out more about CloudMan
-            <a href="">here</a>.</p>
+            cluster-in-the-cloud. You can find your instance's CloudMan interface
+            at <em>http://yourinstanceIP/cloud</em>. </p>
+        <p>
+            You can find out more about CloudMan
+            <a href="http://cloudman.irb.hr/">here</a>.</p>
 
-        <a name="galaxy"><h2>Galaxy</h2></a>
+        <a name="galaxy"></a><h2>Galaxy</h2>
 
-        <p>Galaxy is a web-based platform for biomedical research.</p>
+        <p>Galaxy is a web-based platform for biomedical research.
+            Each launched GVL instance comes with its own Galaxy server, which you can
+            find at <em>http://yourinstanceIP/galaxy</em>.</p>
+        <p> Or, if you
+            are an Australian researcher, you can
+            <a href="use/use-gvl">use one of our Galaxy servers</a> instead. You can find out
+            more about Galaxy at the
+            <a href="https://galaxyproject.org/">Galaxy Project site</a>.</p>
 
-        <a name="linux"><h2>Ubuntu Linux 14.04</h2></a>
+        <a name="linux"></a><h2>Ubuntu Linux 14.04</h2>
 
+        <p>
         Your GVL instance runs on linux, which you have full administrative access to.
         Many Galaxy-installed bioinformatics tools are also accessible from
-            command line.
-        You can ssh in directly as researcher@yourinstance for ordinary use,
-        user@yourinstance for administrative purposes.
+            command line.</p>
+        <p>For ordinary use, ssh in with
+        <em>
+            ssh researcher@yourinstanceIP
+        </em>
+        or for administrative purposes, ssh in with
+        <em>
+            ssh ubuntu@yourinstanceIP
+        </em>.
+        </p>
 
-        <a name="vnc"><h2>VNC Desktop</h2></a>
+        <a name="vnc"></a><h2>VNC Desktop</h2>
 
-        VNC desktop is a browser-based remote desktop for linux.
+        <p>VNC desktop is a browser-based remote desktop for linux.
+            You can log in using your linux credentials, as user <em>researcher</em>
+            for research purposes, or user <em>ubuntu</em> for administrative purposes.</p>
+        <p> You can find your VNC interface at <em>http://yourinstanceIP/vnc</em>.</p>
 
-        <a name="rstudio"><h2>RStudio Server</h2></a>
 
-        RStudio Server gives browser-based access to RStudio, the popular programming
-        and analysis environment for the R programming language.
+        <a name="rstudio"></a><h2>RStudio Server</h2>
 
-        <a name="ipython"><h2>IPython Notebook</h2></a>
+        <p>RStudio Server gives browser-based access to RStudio, the popular programming
+        and analysis environment for the R programming language. You can find your
+        RStudio interface at <em>http://yourinstanceIP/rstudio</em>.<p>
 
-        IPython Notebook is an interactive programming and analysis environment
+        <p>You can find out more about RStudio
+        <a href="http://www.rstudio.com/">here</a>, and the R programming language
+        <a href="r-project.org">here</a>.
+
+        <p>GVL instances come with many R packages from the
+        <a href="http://www.bioconductor.org/">Bioconductor Project</a> pre-installed.<p>
+
+        <a name="ipython"></a><h2>IPython Notebook</h2>
+
+        <p>IPython Notebook is an interactive programming and analysis environment
         for the Python programming language, capable of producing interactive analysis
-        documents.
+        documents.<p>
+
+        <p>
+            Currently IPython Notebook on your GVL instance is a single-user process,
+            which must be launched by the <em>researcher</em> linux user via ssh or VNC.
+            Instructions can be found
+            <a href="http://claresloggett.github.io/gvl_commandline_utilities/">here</a>.
+        </p>
     </div>
 
     <br style="clear:both;"/>
