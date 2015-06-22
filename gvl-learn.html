@@ -1,54 +1,6 @@
 
 <style>
-
-  /* Specific css styles for the learn page header (grey box at the top),
-   the floating menu and the tutorial sections.*/
-  #learn-header{
-    background-color:lightgrey;
-    padding:10px;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-  }
-  #learn-contents{
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:200px;
-    float:left;
-    padding:5px;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    /*<!-- position:fixed; --> */
-  }
-  #alltutorials{
-    width:800px;
-    float:left;
-    /*padding:10px;*/
-  }
-
-  .tutorial-section{
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    border-spacing: 10px;
-    padding: 10px;
-
-  }
-
-  /* Some specific css that is refered to by the jQuery javascript that makes
-   the page contents float correctly on scrolling */
-  .fixed{
-    top: 10px;
-    position: fixed;
-  }
-
-  .xpadding-left{
-    padding-left: 227px;
-
-  }
-
-  .oldpadding{
-    padding-left: 15px;
-  }
+/*Styles have been moved into gvl.css */
 
 </style>
 <script>
@@ -62,14 +14,14 @@ $(function(){
     $(window).on('scroll', function () {
       if ($(window).width() > 1100){
         if ($(window).scrollTop() > 500) {
-          $('#learn-contents').addClass('fixed');
-          $('#alltutorials').removeClass('oldpadding');
-          $('#alltutorials').addClass('xpadding-left');
+          $('#page-tableofcontents').addClass('fixed');
+          $('#page-main').removeClass('oldpadding');
+          $('#page-main').addClass('xpadding-left');
         }
         else {
-          $('#learn-contents').removeClass('fixed');
-          $('#alltutorials').removeClass('xpadding-left');
-          $('#alltutorials').addClass('oldpadding');
+          $('#page-tableofcontents').removeClass('fixed');
+          $('#page-main').removeClass('xpadding-left');
+          $('#page-main').addClass('oldpadding');
         }
       }
     });
@@ -79,7 +31,7 @@ $(function(){
 
 <h1 id="firstHeading" class="firstHeading" style="color: #000000; font-weight: normal; margin: 0px 0px 0.1em; overflow: hidden; padding-top: 0px; padding-bottom: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #aaaaaa; width: auto; font-size: 1.6em; line-height: 1.2em; font-family: sans-serif; background: none;"><span dir="auto">Tutorials and Protocols</span></h1>
 <p> </p>
-<div class="Learn-header" id="learn-header">
+<div class="Learn-header" id="page-header">
   The GVL project team have produced a number of tutorials and analysis protocols for:
   <ul>
     <li>Galaxy</li>
@@ -87,9 +39,8 @@ $(function(){
   </ul>
   There are a combination of basic and advanced galaxy tutorials and command line tutorials which give step by step instructions for an example analysis. Protocols outline the analysis methods and suggest and compare tools for each step rather than prescribe them.
 </div>
-<p></p>
 <div class="page-frame"id="learn-page-frame">
-  <div class="gvl-page-index" id="learn-contents">
+  <div class="gvl-page-index" id="page-tableofcontents">
     <ul>
       <li><a href="#galaxy-tutorials">Learn Galaxy</a></li>
       <li><a href="#rnaseq">RNASeq</a></li>
@@ -101,8 +52,8 @@ $(function(){
       <li><a href="#amplicons">Amplicons</a></li>
     </ul>
   </div>
-
-  <div class="tutorial-frame" id="alltutorials">
+  <p></p>
+  <div class="tutorial-frame" id="page-main">
 
     <div class="tutorial-section" id="galaxy">
       <h2><a name="galaxy-tutorials"></a>Learn Galaxy</h2>

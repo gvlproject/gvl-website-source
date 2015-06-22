@@ -1,0 +1,89 @@
+
+<script>
+/* A script which makes the menu section of the page change to a fixed position
+when the window is scrolled to make the header disappear off the top of the page.
+The menu is then fixed in the top left position while allowing the tutorials to
+scroll by. */
+$(function(){
+
+   // jQuery methods go here...
+    $(window).on('scroll', function () {
+        if ($(window).width() > 1100){
+          if ($(window).scrollTop() > 400) {
+            $('#page-tableofcontents').addClass('fixed');
+            $('#page-main').removeClass('oldpadding');
+            $('#page-main').addClass('xpadding-left');
+          }
+          else {
+            $('#page-tableofcontents').removeClass('fixed');
+            $('#page-main').removeClass('xpadding-left');
+            $('#page-main').addClass('oldpadding');
+          }
+        }
+    });
+
+});
+</script>
+
+<div id="page-header">
+<p>Each GVL instance comes with pre-installed bioinformatics tools and
+    reference data, which can be used through several different interfaces. </p>
+<p>The various platforms and analysis environments installed on each GVL instance
+are described below.</p>
+</div>
+
+<div id="page-frame">
+    <div id="page-tableofcontents">
+    <ul>
+      <li><a href="#dashboard">GVL Dashboard</a></li>
+      <li><a href="#cloudman">CloudMan</a></li>
+      <li><a href="#galaxy">Galaxy</a></li>
+      <li><a href="#linux">Ubuntu Linux 14.04</a></li>
+      <li><a href="#vnc">VNC Desktop</a></li>
+      <li><a href="#rstudio">RStudio Server</a></li>
+      <li><a href="#ipython">IPython Notebook</a></li>
+    </ul>
+    </div>
+    <div id="page-main">
+        <a name="dashboard"><h2>GVL Dashboard</h2></a>
+
+        <p>The GVL Dashboard is the home page of your GVL instance.
+            It shows the status of each service, gives a link to each running service.</p>
+
+        <a name="cloudman"><h2>CloudMan</h2></a>
+
+        <p>CloudMan gives you administrative control over your virtual machine.
+            It also allows you to add worker nodes to your instance to build a virtual
+            cluster-in-the-cloud. You can find out more about CloudMan
+            <a href="">here</a>.</p>
+
+        <a name="galaxy"><h2>Galaxy</h2></a>
+
+        <p>Galaxy is a web-based platform for biomedical research.</p>
+
+        <a name="linux"><h2>Ubuntu Linux 14.04</h2></a>
+
+        Your GVL instance runs on linux, which you have full administrative access to.
+        Many Galaxy-installed bioinformatics tools are also accessible from
+            command line.
+        You can ssh in directly as researcher@yourinstance for ordinary use,
+        user@yourinstance for administrative purposes.
+
+        <a name="vnc"><h2>VNC Desktop</h2></a>
+
+        VNC desktop is a browser-based remote desktop for linux.
+
+        <a name="rstudio"><h2>RStudio Server</h2></a>
+
+        RStudio Server gives browser-based access to RStudio, the popular programming
+        and analysis environment for the R programming language.
+
+        <a name="ipython"><h2>IPython Notebook</h2></a>
+
+        IPython Notebook is an interactive programming and analysis environment
+        for the Python programming language, capable of producing interactive analysis
+        documents.
+    </div>
+
+    <br style="clear:both;"/>
+</div>
