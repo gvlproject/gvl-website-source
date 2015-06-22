@@ -14,14 +14,14 @@ $(function(){
     $(window).on('scroll', function () {
       if ($(window).width() > 1100){
         if ($(window).scrollTop() > 500) {
-          $('#learn-contents').addClass('fixed');
-          $('#alltutorials').removeClass('oldpadding');
-          $('#alltutorials').addClass('xpadding-left');
+          $('#page-tableofcontents').addClass('fixed');
+          $('#page-main').removeClass('oldpadding');
+          $('#page-main').addClass('xpadding-left');
         }
         else {
-          $('#learn-contents').removeClass('fixed');
-          $('#alltutorials').removeClass('xpadding-left');
-          $('#alltutorials').addClass('oldpadding');
+          $('#page-tableofcontents').removeClass('fixed');
+          $('#page-main').removeClass('xpadding-left');
+          $('#page-main').addClass('oldpadding');
         }
       }
     });
@@ -31,7 +31,7 @@ $(function(){
 
 <h1 id="firstHeading" class="firstHeading" style="color: #000000; font-weight: normal; margin: 0px 0px 0.1em; overflow: hidden; padding-top: 0px; padding-bottom: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #aaaaaa; width: auto; font-size: 1.6em; line-height: 1.2em; font-family: sans-serif; background: none;"><span dir="auto">Tutorials and Protocols</span></h1>
 <p> </p>
-<div class="Learn-header" id="learn-header">
+<div class="Learn-header" id="page-header">
   The GVL project team have produced a number of tutorials and analysis protocols for:
   <ul>
     <li>Galaxy</li>
@@ -41,7 +41,7 @@ $(function(){
 </div>
 <p></p>
 <div class="page-frame"id="learn-page-frame">
-  <div class="gvl-page-index" id="learn-contents">
+  <div class="gvl-page-index" id="page-tableofcontents">
     <ul>
       <li><a href="#galaxy-tutorials">Learn Galaxy</a></li>
       <li><a href="#rnaseq">RNASeq</a></li>
@@ -54,7 +54,7 @@ $(function(){
     </ul>
   </div>
   <p></p>
-  <div class="tutorial-frame" id="alltutorials">
+  <div class="tutorial-frame" id="page-main">
 
     <div class="tutorial-section" id="galaxy">
       <h2><a name="galaxy-tutorials"></a>Learn Galaxy</h2>
