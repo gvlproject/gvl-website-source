@@ -1,4 +1,33 @@
-<div class="page-frame" id="learn-page-frame">
+<script>
+/* A script which makes the menu section of the page change to a fixed position
+when the window is scrolled to make the header disappear off the top of the page.
+The menu is then fixed in the top left position while allowing the tutorials to
+scroll by. */
+$(function(){
+
+   // jQuery methods go here...
+    $(document).ready(function (){
+      $('#page-main').addClass('oldpadding');
+    });
+    $(window).on('scroll', function () {
+      if ($(window).width() > 1100){
+        if ($(window).scrollTop() > 350) {
+          $('#page-tableofcontents').addClass('fixed');
+          $('#page-main').removeClass('oldpadding');
+          $('#page-main').addClass('xpadding-left');
+        }
+        else {
+          $('#page-tableofcontents').removeClass('fixed');
+          $('#page-main').removeClass('xpadding-left');
+          $('#page-main').addClass('oldpadding');
+        }
+      }
+    });
+
+});
+</script>
+
+<div id="page-frame">
   <div id="page-tableofcontents" class="gvl-page-index">
     <ul>
       <li>
@@ -32,17 +61,17 @@
       <strong>From the Command Line</strong>(e.g. in MS Windows, call up the Command Prompt. In Linux, ssh login).</p>
       <ul>
         <li>Change to the directory containing your file;</li>
-        <li>Type 
-        <em>ftp &lt;ipaddress&gt;</em>e.g. 
+        <li>Type
+        <em>ftp &lt;ipaddress&gt;</em>e.g.
         <em>ftp galaxy-qld.genome.edu.au</em>;</li>
         <li>Enter your Galaxy user id and password; then</li>
-        <li>Type 
-        <em>put &lt;filename&gt;</em>e.g. put 
+        <li>Type
+        <em>put &lt;filename&gt;</em>e.g. put
         <em>CM10005.FASTA.</em></li>
       </ul>
       <p>The file is now in the Galaxy FTP directory under your user ID (no one else can see it)</p>
       <ul>
-        <li>Go to your Galaxy server e.g. 
+        <li>Go to your Galaxy server e.g.
         <a class="external free" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">http://galaxy-qld.genome.edu.au/;</a></li>
         <li>Select Get Data / Upload File. Your file will be displayed in the list of "Files uploaded by ftp"; then</li>
         <li>Select it, Execute.</li>
@@ -51,9 +80,9 @@
         <strong>Using Internet Explorer</strong>
       </p>
       <ul>
-        <li>Enter 
+        <li>Enter
         <em>
-        <a class="external free" href="ftp://130.56.248.182" rel="nofollow">ftp://</a>&lt;ipaddress&gt;</em>into the browser e.g. 
+        <a class="external free" href="ftp://130.56.248.182" rel="nofollow">ftp://</a>&lt;ipaddress&gt;</em>into the browser e.g.
         <em>
           <a class="external free" href="ftp://galaxy-qld.genome.edu.au" rel="nofollow">ftp://galaxy-qld.genome.edu.au;</a>
         </em></li>
@@ -64,14 +93,14 @@
       </ul>
       <p>From another file explorer window, drag and drop your file into the ftp window. The file is now in the Galaxy FTP directory under your user ID (no one else can see it).</p>
       <ul>
-        <li>Go to your Galaxy server e.g. 
+        <li>Go to your Galaxy server e.g.
         <a class="external free" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">http://galaxy-qld.genome.edu.au/;</a></li>
         <li>Select Get Data / Upload File. Your file will be displayed in the list of "Files uploaded by ftp"; then</li>
         <li>Select it, Execute</li>
       </ul>
       <p>Galaxy will unpack compressed (.gz) files. Please do not upload many compressed files simultaneously by FTP because you may run out of the disk space in your allocation. Some organisations have very strict firewall settings that prevent FTP data transfer. To test FTP, upload a small compressed (.gz) file.</p>
       <h3>GenomeSpace</h3>
-      <p>Refer to 
+      <p>Refer to
       <a href="http://www.genomespace.org/" target="_blank" title="Genome Space">Genome Space</a>for details.</p>
     </div>
     <div class="tutorial-section" id="transfer-galaxy">
@@ -97,8 +126,8 @@
       <ul>
         <li>Open a UNIX terminal and navigate to the place you want to store your files;</li>
         <li>In Galaxy history &gt; right mouse click on 'Save' icon &gt; Copy Link Address; then</li>
-        <li>In your UNIX terminal type: curl 
-        <em>link to your file</em>&gt; 
+        <li>In your UNIX terminal type: curl
+        <em>link to your file</em>&gt;
         <em>name of destination file</em>.</li>
       </ul>
       <p>Alternatively, you can download via your browser:</p>
@@ -111,9 +140,9 @@
       <h2>How do I do De Novo transcript assembly with Trinity and read normalisation?</h2>
       <p>Trinity read normalisation improves the run time for transcript assembly, and it is recommended for large datasets.</p>
       <ul>
-        <li>Example of recommended transcript assembly with Trinity on 
+        <li>Example of recommended transcript assembly with Trinity on
         <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Histories &gt; De novo transcript assembly using Trinity package.</li>
-        <li>The workflow for this procedure on 
+        <li>The workflow for this procedure on
         <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Workflows &gt; De novo transcript assembly using Trinity package.</li>
         <li>The workflow can be used with FASTQ data in Shared Data &gt; Published Histories &gt; Data for Trinity.</li>
       </ul>
@@ -123,42 +152,41 @@
         <li>convert Tabular to FASTQ using only one column for read names.</li>
       </ul>
       <ul>
-        <li>Example of executing this transformation on 
+        <li>Example of executing this transformation on
         <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Histories &gt; Preparation of FASTQ reads for Trinity read normalisation.</li>
-        <li>Workflow for this transformation on 
+        <li>Workflow for this transformation on
         <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Workflows &gt; Preparation of FASTQ reads for Trinity read normalisation.</li>
       </ul>
     </div>
     <div class="tutorial-section" id="meme">
       <h2>How do I resolve MEME Errors?</h2>
       <p>MEME has a limit on total length of sequences: "The sequences may contain no more than 60,000 characters total and must be in FASTA format".</p>
-      <p>In some cases sequences can be trimmed on both sides without compromising protein binding sites. Workflow 'Trim multiple sequences on both ends by 10nt' is available on 
+      <p>In some cases sequences can be trimmed on both sides without compromising protein binding sites. Workflow 'Trim multiple sequences on both ends by 10nt' is available on
       <a href="http://galaxy-qld.genome.edu.au/" target="_blank">Galaxy-qld</a>in Shared Data &gt; Published Workflows.</p>
     </div>
     <div class="tutorial-section" id="version">
       <h2>What GVL Version am I using?</h2>
       <p>A GVL analysis server consists of three components:</p>
       <ul>
-        <li>a 
+        <li>a
         <em>Machine Image</em>;</li>
-        <li>a 
+        <li>a
         <em>Galaxy File System</em>; and</li>
         <li>Genome Index reference data</li>
       </ul>
-      <p>GVL periodically releases new versions of the 
-      <em>Machine Image</em>and the 
+      <p>GVL periodically releases new versions of the
+      <em>Machine Image</em>and the
       <em>Galaxy File System</em>, as new features are added to the GVL.</p>
       <ul>
-        <li>The 
+        <li>The
         <em>Machine Image</em>version is chosen as an Advanced Option on the launch page (
         <a href="https://launch.genome.edu.au">launch.genome.edu.au</a>). You can see what version you have on the NeCTAR dashboard display of your Instances.</li>
         <li>You don't have control of the Galaxy File System version. You can see what version you have from the banner on your Galaxy (eg "Galaxy / GVL 3.05")</li>
         <li>Genome Index reference data is a shared file system amongst all GVLs: versioning does not apply.</li>
       </ul>
-      <p>For more information refer to 
+      <p>For more information refer to
       <a href="launch-version">GVL versions.</a></p>
     </div>
     <br style="clear:both;" />
-    <script>/* A script which makes the menu section of the page change to a fixed position when the window is scrolled to make the header disappear off the top of the page. The menu is then fixed in the top left position while allowing the tutorials to scroll by. */ $(function(){ $(window).on('scroll', function () { if ($(window).width() &gt; 1100){ if ($(window).scrollTop() &gt; 310) { $('#page-tableofcontents').addClass('fixed'); $('#page-main').removeClass('oldpadding'); $('#page-main').addClass('xpadding-left'); } else { $('#page-tableofcontents').removeClass('fixed'); $('#page-main').removeClass('xpadding-left'); $('#page-main').addClass('oldpadding'); } } }); });</script>
   </div>
 </div>

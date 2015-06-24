@@ -7,6 +7,9 @@ scroll by. */
 $(function(){
 
    // jQuery methods go here...
+    $(document).ready(function (){
+      $('#page-main').addClass('oldpadding');
+    });
     $(window).on('scroll', function () {
         if ($(window).width() > 1100){
           if ($(window).scrollTop() > 400) {
@@ -45,6 +48,7 @@ are described below.</p>
     </ul>
     </div>
     <div id="page-main">
+      <div class="tutorial-section">
         <a name="dashboard"></a><h2>GVL Dashboard</h2>
 
         <p>The GVL Dashboard is the home page of your GVL instance.
@@ -121,6 +125,6 @@ are described below.</p>
             <a href="http://claresloggett.github.io/gvl_commandline_utilities/">here</a>.
         </p>
     </div>
-
-    <br style="clear:both;"/>
+  </div>
+  <br style="clear:both;"/>
 </div>

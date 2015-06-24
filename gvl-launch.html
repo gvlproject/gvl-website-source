@@ -8,6 +8,9 @@ scroll by. */
 $(function(){
 
    // jQuery methods go here...
+    $(document).ready(function (){
+      $('#page-main').addClass('oldpadding');
+    });
     $(window).on('scroll', function () {
       if ($(window).width() > 1100){
         if ($(window).scrollTop() > 500) {
