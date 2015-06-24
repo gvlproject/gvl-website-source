@@ -5,6 +5,34 @@
 }
 
 </style>
+
+<!-- Needs to be moved into gvl.js -->
+<script>
+/* A script which makes the menu section of the page change to a fixed position
+when the window is scrolled to make the header disappear off the top of the page.
+The menu is then fixed in the top left position while allowing the tutorials to
+scroll by. */
+$(function(){
+
+   // jQuery methods go here...
+    $(window).on('scroll', function () {
+      if ($(window).width() > 1100){
+        if ($(window).scrollTop() > 200) {
+          $('#page-tableofcontents').addClass('fixed');
+          $('#page-main').removeClass('oldpadding');
+          $('#page-main').addClass('xpadding-left');
+        }
+        else {
+          $('#page-tableofcontents').removeClass('fixed');
+          $('#page-main').removeClass('xpadding-left');
+          $('#page-main').addClass('oldpadding');
+        }
+      }
+    });
+
+});
+</script>
+
 <div class="page-frame" id="page-frame">
   <div class="gvl-page-index" id="page-tableofcontents">
       <ul>
@@ -20,7 +48,6 @@
    <div class="tutorial-section" id="personal">
 <h2><a name="personal-gvl"></a>Personal GVL</span></h4>
 <p>If you want to launch your own GVL please go to <a href="index.php?option=com_content&amp;view=article&amp;id=42&amp;catid=2&amp;Itemid=157">Get your own GVL</a> page</p>
-<hr />
   </div>
   <div class="tutorial-section" id="public">
 <h2><a name="public-gvl"></a>Public GVL services</span></h4>
@@ -52,7 +79,6 @@
     </tr>
   </tbody>
 </table>
-<hr />
 </div>
 <!--div class="tutorial-section" id="community">
 <h4><a name="community-gvl"></a>Community GVL services</span></h4>
