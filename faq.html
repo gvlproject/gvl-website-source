@@ -158,12 +158,26 @@ $(function(){
         <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Workflows &gt; Preparation of FASTQ reads for Trinity read normalisation.</li>
       </ul>
     </div>
+
     <div class="tutorial-section" id="meme">
       <h2>How do I resolve MEME Errors?</h2>
       <p>MEME has a limit on total length of sequences: "The sequences may contain no more than 60,000 characters total and must be in FASTA format".</p>
       <p>In some cases sequences can be trimmed on both sides without compromising protein binding sites. Workflow 'Trim multiple sequences on both ends by 10nt' is available on
       <a href="http://galaxy-qld.genome.edu.au/" target="_blank">Galaxy-qld</a>in Shared Data &gt; Published Workflows.</p>
     </div>
+    <div class="tutorial-section" id="diskquotas">
+      <a name="diskquoatas"></a><h2>Disk quotas for Australian researchers on Galaxy-qld</h2>
+      After registration on Galaxy-qld all new users are assigned 200 GB disk quota. Later we allocate more disk space for Australian and UQ users. This is usually happen within one working day after the registration. The disk quota can be seen at the top Galaxy menu User > Preferences
+      <div class="tutorial-subsection">
+        <h3>I used all quota on Galaxy-qld. Can you give me more disk space?</h3>
+        In some circumstances we can increase the user quota. However, Galaxy-qld is a public resource, and we can maintain the service only with efficient use of our resources, especially the storage. Please treat Galaxy-qld as a work bench. Researchers usually store their samples in fridges or freezers, solutions on shelfs etc. Work benches are used for experiments, and usually will be cleaned after the work. Use the same approach on Galaxy-qld. 1. Plan your analysis first. 2. Upload one or two samples and develop a workflow. 3. Delete unneeded files. Delete temporary files such as SAM. 4. Do not upload many (compressed) FASTQ files simultaneously. Galaxy will unzip uploaded files, and these files may fill up your allocation. 5. By default, most alignments keep all reads including unaligned. There is no need to store FASTQ if you have an alignment. 6. Download the results and delete files on Galaxy-qld
+      </div>
+      <div class="tutorial-subsection">
+        <h3>I deleted many files but my usage is still shown as 100%. What is going on?</h3>
+        Galaxy uses a ‘soft delete’ option and the deleted files have to purged: History Menu > Purge Deleted Datasets The files have to be purged from each history separately. Use ‘Delete Permanently’ option for histories. To find deleted by not purged histories: History Menu > Saved Histories > Advanced Search > deleted
+      </div>
+    </div>
+
     <div class="tutorial-section" id="version">
       <h2>What GVL Version am I using?</h2>
       <p>A GVL analysis server consists of three components:</p>
