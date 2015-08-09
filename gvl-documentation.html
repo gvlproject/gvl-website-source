@@ -1,0 +1,111 @@
+
+<style>
+/*Styles have been moved into gvl.css */
+
+</style>
+<script>
+/* A script which makes the menu section of the page change to a fixed position
+when the window is scrolled to make the header disappear off the top of the page.
+The menu is then fixed in the top left position while allowing the tutorials to
+scroll by. */
+$(function(){
+
+   // jQuery methods go here...
+    $(document).ready(function (){
+      $('#page-main').addClass('oldpadding');
+    });
+    $(window).on('scroll', function () {
+      if ($(window).width() > 1100){
+        if ($(window).scrollTop() > 500) {
+          $('#page-tableofcontents').addClass('fixed');
+          $('#page-main').removeClass('oldpadding');
+          $('#page-main').addClass('xpadding-left');
+        }
+        else {
+          $('#page-tableofcontents').removeClass('fixed');
+          $('#page-main').removeClass('xpadding-left');
+          $('#page-main').addClass('oldpadding');
+        }
+      }
+    });
+
+});
+</script>
+
+<div id="page-header">
+  This page gives an overview of where to find commonly-requested documention on using the GVL.
+</div>
+<div class="page-frame"id="learn-page-frame">
+  <div class="gvl-page-index" id="page-tableofcontents">
+    <ul>
+      <li><a href="#launch-instance">Launch an instance on the cloud</a></li>
+      <li><a href="#use-intance">Use and administer your instance</a></li>
+      <li><a href="#build">Build a custom GVL</a></li>
+    </ul>
+  </div>
+  <p></p>
+  <div class="tutorial-frame" id="page-main">
+
+    <div class="tutorial-section" id="launch-instance">
+      <h2></a>Launch a GVL instance on the cloud</h2>
+      <p>A GVL instance is a server, usually running as a virtual machine in a cloud environment.
+          You can find an overview of supported clouds and how to launch an instance on the
+          <a href="launch/launch">Launch page</a>.
+      </p>
+      <p>In particular, a step-by-step guide to launching an instance can be found
+          <a href="https://docs.google.com/document/u/1/d/1uYKWZckyR8kZSY6viECMJsGSTaNsS2nVMj5n_YYzxGY/pub">here</a>.
+      </p>
+    </div>
+    <div class="tutorial-section" id="use-instance">
+      <h2></a>Use or administer your instance</h2>
+      <p>Your GVL instance runs your own instance of Galaxy as well as several other services,
+          including CloudMan, RStudio Server and IPython Notebook, and an underlying Ubuntu linux environment.
+          These services are described on the
+          <a href="get/workbench-services">Workbench Services page</a>.
+      <p>On GVL versions older than 4.0, some services will not be available until installed.
+          Instructions on doing this can be found on
+          <a href="https://github.com/gvlproject/gvl_commandline_utilities/blob/release_GVL_3.05/README.md">v3.05 of the README</a>
+          in our GitHub repository.
+      <p>When you first create your instance, you will be given an IP address which you can access
+          in a web browser. At the home page of your instance you should find your GVL Dashboard, with a list
+          of <a href="get/workbench-services">Workbench Services</a> and login instructions.
+      </p>
+      <p>
+          For general documentation on using Galaxy itself, the best source is the
+          <a href="https://galaxyproject.org/">Galaxy Project website</a>. This site includes
+          documentation on
+          <a href="https://wiki.galaxyproject.org/Admin/Interface">Galaxy Administration</a>.
+      </p>
+      <p>Instructions for command-line utilities administration can be found in the
+          <a href="https://github.com/gvlproject/gvl_commandline_utilities">GVL commandline utilities GitHub repository</a>.
+          These include instructions for:
+          <ul>
+              <li>Adding a new linux or RStudio Server user</li>
+              <li>Updating the environment modules to reflect changes in tools installed
+                  from the Galaxy Toolshed</li>
+              <li>Using galaxy-fuse to directly mount Galaxy Datasets for command-line access</li>
+          </ul>
+      </p>
+    </div>
+    <div class="tutorial-section" id="build">
+      <h2></a>Build a custom GVL</h2>
+        <p>"Building" a GVL refers to creating a new, custom cloud image, which can be used
+            to launch new instances. Most users will not need to do this.
+        </p>
+        <p>Reasons to build a new GVL image include:
+            <ul>
+                <li>You would like to port the GVL to a cloud environment where it is not already available.</li>
+                <li>You would like to make custom modifications which you can't make after launch, or create
+                    a modified image, tailored to your research domain, from which your own research community to
+                    can launch instances.</li>
+            </ul>
+        <p>The ansible playbook used to build the GVL image and GVL filesystem, and instructions for
+            using it, can be found in our
+            <a href="https://bitbucket.org/gvl/gvl-image-playbook/">GVL image bitbucket repository</a>.
+            These scripts are heavily reliant on the Galaxy CloudMan playbook, which you will find
+            referenced in the README.
+        </p>
+  </div>
+
+  <br style="clear:both;"/>
+</div>
