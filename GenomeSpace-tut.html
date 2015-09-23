@@ -1,0 +1,197 @@
+<style>
+    .smallpic>img{
+        height:100px;
+        width:100px;
+    }
+
+    </style>
+
+<!-- Needs to be moved into gvl.js -->
+<script>
+    /* A script which makes the menu section of the page change to a fixed position
+     when the window is scrolled to make the header disappear off the top of the page.
+     The menu is then fixed in the top left position while allowing the tutorials to
+     scroll by. */
+$(function(){
+  
+  // jQuery methods go here...
+  $(document).ready(function (){
+                    $('#page-main').addClass('oldpadding');
+                    });
+  $(window).on('scroll', function () {
+               if ($(window).width() > 1100){
+               if ($(window).scrollTop() > 200) {
+               $('#page-tableofcontents').addClass('fixed');
+               $('#page-main').removeClass('oldpadding');
+               $('#page-main').addClass('xpadding-left');
+               }
+               else {
+               $('#page-tableofcontents').removeClass('fixed');
+               $('#page-main').removeClass('xpadding-left');
+               $('#page-main').addClass('oldpadding');
+               }
+               }
+               });
+  
+  });
+    </script>
+
+<div class="page-frame" id="page-frame">
+    <div class="gvl-page-index" id="page-tableofcontents">
+        <ul>
+            <li><a href="#about">What is GenomeSpace</a></li>
+            <li><a href="#prerquisit">Prerequisites</a></li>
+            <li><a href="#register">Registering to GenomeSpace</a></li>
+            <li><a href="#swift">Mounting swift container</a></li>
+            <li><a href="#basic">Basic file manipulation</a></li>
+            <li><a href="#galaxy">Adding Galaxy into your account</a></li>
+            <li><a href="#filetransfer">File Transfer.</a></li>
+        </ul>
+    </div>
+    <p></p>
+    <div class="use-frame" id="page-main">
+        <div class="tutorial-section" id="personal">
+            <h2><a name="about"></a>What is GenomeSpace?</span></h4>
+                <p>GenomeSpace is a cloud-based interoperability framework to support integrative genomics analysis through an easy-to-use Web interface. GenomeSpace provides access to a diverse range of bioinformatics tools, and bridges the gaps between the tools, making it easy to leverage the available analyses and visualizations in each of them. The tools retain their native look and feel, with GenomeSpace providing frictionless conduits between them through a lightweight interoperability layer. GenomeSpace does not perform any analyses itself; these are done within the member tools wherever they live – desktop, Web service, cloud, in-house server, etc. Rather, GenomeSpace provides tool selection and launch capabilities, and acts as a data highway automatically reformatting data as required when results move from the output of one tool to input for the next. The GVL GenomeSpace can be found at
+                <a href="https://genomespace.genome.edu.au">https://genomespace.genome.edu.au</a> .</p>
+                </div>
+        <div class="tutorial-section" id="public">
+            <h2><a name="prerquisit"></a>Prerequisites</span></h4>
+                <p>GenomeSpace use a few dialogue box to communicate with NeCTAR cloud and if you have an “AdBlocker” on your system the dialogues will not be shown properly. So in case you have an AdBlocker on your system please disable it for GenomeSpace.genome.edu.au domain.</p>
+        </div>
+        <div class="tutorial-section" id="register">
+            <h2>
+                <a name="registering-into-genomespace"></a>Registering into GenomeSpace</span>
+                </h3>
+                <p>For registering into GenomeSPace you need to have a valid email address and follow the following steps:</p>
+                <ul>
+                    <li>Go to https://genomespace.genome.edu.au/ and click on the Register new GenomeSpace user link:</li>
+                    <img src="site/media/images/genomespace-tutorial/register.png" alt="" />
+                    <li>Enter your prefered username, password and the valid email address and click the Sign up<i> <b>Note:</b> your username must be unique in GenomeSpace environment; otherwise you will receive an error.</i>
+                        <img src="site/media/images/genomespace-tutorial/user-pas.png" alt="" />
+                        If everything goes right you will see the following page.</li>
+                    
+                    <img src="site/media/images/genomespace-tutorial/RegisterComp.png" alt="" />
+                    <li>Go to the email you provided while registering and open the email from GenomeSpace Titled “GenomeSpace user registration” and follow the link in that email. From now on you can login to GenomeSpace by going to <i><a href="https://genomespace.genome.edu.au/"> https://genomespace.genome.edu.au</a><i> .</li>
+                    <li>go to <a href="https://genomespace.genome.edu.au/"> https://genomespace.genome.edu.au</a> and enter your username and password you created in the previous steps. You will be logged in into GenomeSpace.<p> In a few seconds you will be redirected to your Home page.
+                        <img src="site/media/images/genomespace-tutorial/GS explained.png" alt="" />
+                        In this page you can find the following items:<ol>
+                            <li>  your USERNAME on the top right corner</li>
+                            <li> The Menu bar</li>
+                            <li> The Application bar</li>
+                            <li> Your Home directory</li>
+                        </ol>
+                        <ul style="list-style-type:disc">
+                            <li>The directory under the name Shared to “your username” contains any folders that has been shared to you through the GenomeSpace website.</li>
+                            <li> The public directory is the directory which contains anything that has been made public to the cloud through the GenomeSpace website.</li>
+                        </ul>
+                        </p></li>
+                </ul>
+        </div>
+        <div class="tutorial-section" id="swift">
+            <h2><a name="swift"></a>Mounting a swift container</span><h6><i>(This session has written in a way to suit NeCTAR cloud for any other OpenStack based cloud storage please change the parameters as necessary)</i></h6></h4>
+                <p>NeCTAR object storage is a place that people with NeCTAR credentials can store their data reliably. Containers can be found under the Object Store link in NeCTAR’s dashboard. For browsing through available containers go to the NeCTAR dashboard at <a herf="https://dashboard.rc.nectar.org.au">https://dashboard.rc.nectar.org.au </a> and on the left hand side of the page you can find the Object Store. By selecting the container under the object store you can see all the available containers under your tenancy.
+                </p>
+                <p>To mount an available container go to Connect menu bar and select Swift Container.
+                <img src="site/media/images/genomespace-tutorial/GS-swift.png" alt="" /> You will see a new page as follows:
+                </p>
+                <img src="site/media/images/genomespace-tutorial/swift-det.png" alt="" />
+                <p> To fill this form you need the following parameters:<ol>
+                    <li>OpenStack EndPoint: It’s predefault value has set to connect to NeCTAR by default. <i> https://keystone.rc.nectar.org.au:5000/v2.0/tokens<i>
+                        
+                    </li>
+                    <li>NeCTAR UserName: Your username can be found at the top right corner of the NeCTAR dashboard as shown below:<img></img></li>
+                    <img src="site/media/images/genomespace-tutorial/Nectar-user.png" alt="" />
+                    <li>You API password: The API key is the key that applications can use to connect to NeCTAR on your behalf. To find your API key do the following steps:
+                        <ol type="a">
+                            <li> Login to your NeCTAR dashboard account.</li>
+                            <li> On the top right hand side of your Home click on the setting link</li>
+                            <img src="site/media/images/genomespace-tutorial/nectar-setting.png" alt="" />
+                            
+                            <li> Press the Reset Password button. (Warning: If you have already done this process for any other application you can use your old password. This process will reset your API key.)</li>
+                            <img src="site/media/images/genomespace-tutorial/nectar-pas.png" alt="" />
+                        </ol>
+                    </li>
+                    <li>Your NeCTAR tenancy name. The Tenancy name has been assigned to your project by the NeCTAR administration process.
+                        <img src="site/media/images/genomespace-tutorial/Nectar Tenancy.JPG" alt="" /></li>
+                    <li>The container’s name that you want to connect to.
+                        <img src="site/media/images/genomespace-tutorial/containers.JPG" alt="" /></li>
+                    
+                </ol></p>
+        </div>
+        <div class="tutorial-section" id="basic">
+            <h2><a name="basic-file-manipulation"></a>Basic file manipulation</span></h4>
+                <p>Under the containers directory you can do the basic file manipulation as follows:<ul style="list-style-type:disc">
+                    
+                    <li> <strong>Create Directory:</strong> For creating a directory under another directory right click on the source directory and select Create Subdirectory item. You will be asked for a name and in a few second your target directory will be created.
+                        
+                    </li><li> <strong>Uploading a file into a directory:</strong> Uploading a file is happening through drag and drop. First go to the directory you want to upload the file into and drag and drop the file you want to upload into the open area on the right hand side of Home directory. The effective area will be turned green.
+                        
+                    </li><li> <strong>Deleting a file:</strong> For deleting the file, right click on the selected file and select the “Delete” item. The file will be deleted in a few seconds.
+                        
+                    </li><li> <strong>Previewing the file:</strong> Under the right click menu you will find the preview item which will show the first 5000 bytes of a file.
+                        
+                    </li><li> <strong>Downloading a file:</strong> For downloading a file simply right click on the file and select download. Your download will be started in a few seconds.
+                        
+                    </li><li> <strong>Creating a public link:</strong> Right click on the file you want to get the public link and select the public link. The publick link will be shown to you in a few seconds. (Warning: The public link is available for 4 days.)
+                        
+                    </li><li> <strong>Create private link:</strong> The private link can be created by selecting the view file link item under the right click’s items.
+                    </li>
+                </ul></p>
+        </div>
+        <div class="tutorial-section" id="galaxy">
+            <h2><a name="adding-galaxy"></a>Adding a Galaxy into your account:</span></h4>
+                <p><strong>PREREQUISITE: Please make sure you have registered on the Galaxy you want to add to GenomeSpace.</strong></p>
+                <p>The latest GVL image is fully compatible with the GenomeSpace. The Galaxy launched under the GVL can be connected to the GenomeSpace as follows:<ol>
+                    
+                    <li> From the Menu bar go to the manage menu and select Private Tool.
+                        <img src="site/media/images/genomespace-tutorial/private-tool.png" alt="" />
+                    </li><li>From the opened window press the Add new button.
+                        <img src="site/media/images/genomespace-tutorial/Galaxy.png" alt="" />
+                    </li><li> In the new window fill the items as follow:
+                        <ul>
+                            <li>Give a name to your Galaxy
+                            </li><li> Give a description (Optional)
+                            </li><li> Tool provider GVL (Optional)
+                            </li><li> Base URL: http://[Glaxy-ip or DNS]/galaxy/tool_runner?tool_id=genomespace_importer
+                            </li><li> Parameter name: URL
+                            </li><li> Required: Ticked
+                            </li><li> Allow multiple files: Ticked
+                            </li><li> Multiple file Delimiter: ,
+                            </li><li> Select the files’ types that you want your galaxy to work on
+                            </li><li> Upload an image as an Icon for Galaxy (Optional)
+                            </li><li> Press the save button. In a few seconds your Galaxy instance will be added to the Application bar.</li>
+                        </ul>
+                        <p>A sample page can be seen in the following image.</p>
+                        <img src="site/media/images/genomespace-tutorial/Galaxy-config.png" alt="" />
+                    </li><li> Launching the added Galaxy from GenomeSpace:
+                        From the GenomeSpace click on the Arrow on the right side of your Galaxy application in the Application bar and select launch.Your galaxy will be opened in a new window. (Note: Your browser may block the pop-up. Allow the pop-up accordingly).
+                        <img src="site/media/images/genomespace-tutorial/gal-launch.png" alt="" />
+                    </li><li> From the opened Galaxy login and under your username go to the preferences options
+                        </p>
+                        <img src="site/media/images/genomespace-tutorial/galaxy-set.png" alt="" />
+                        <p> and select the Manage OpenIDs links:
+                        <img src="site/media/images/genomespace-tutorial/galaxy-openid.png" alt="" />
+                    </li><li> From the associate more OpenID select the GenomeSpace and press login. Your GenomeSpace will be appear as link on the top as a URL.
+                        <img src="site/media/images/genomespace-tutorial/openid-set.png" alt="" />
+                    </li>
+                </ol>From now on your Galaxy can talk to the GenomeSpace under your UserName.
+                </p>
+        </div>
+        <div class="tutorial-section" id="filetransfer">
+            <h2><a name="file-transfer"></a>Sending/Receiving a file into/from Galaxy:</span></h4>
+                <p><strong>PREREQUISITE: Please make sure you have connected your Galaxy to GenomeSpace first (<a href="#galaxy">How to</a>).</strong></p>
+                <ul style="list-style-type:A">
+                    <li>Sending A file
+                        <ul>
+                            <li><strong>From your Galaxy</strong> go to Get Data and select  GenomeSpace Importer (Please make sure you are logged into GenomeSpace). You will see your genomespace home page in a few seconds. Select the file you want to send into your Galaxy and press the Send to Galaxy button. A new job will be created in your Galaxy and your file will be in the Galaxy by the completion of the job.
+                            </li><li><strong>From GenomeSpcae</strong> You can also send a file into Galaxy by from The GenomeSpace home page. Simply drag and drop the file into your Galaxy from your GenomeSpace Home page.
+                            </li>
+                        </ul>
+                    </li><li> Receiving A file
+                        <p>Under each file click on the store icon and choose send to GenomeSpace. A dialogue box will be opened. Choose the directory to store the file and enter the name of the file to store. If you do not provide the file name file will be stored as “display”. By click send button the file will be send to GenomeSpace and the dialogue box will be closed on success.</p>
+                    </li>
+                </ul>
+        </div>
+    </div>
+</div>
