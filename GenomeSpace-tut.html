@@ -51,18 +51,18 @@ $(function(){
     <p></p>
     <div class="use-frame" id="page-main">
         <div class="tutorial-section" id="personal">
-            <h2><a name="about"></a>What is GenomeSpace?</span></h4>
+            <h2><a name="about"></a>What is GenomeSpace?</h2>
                 <p>GenomeSpace is a cloud-based interoperability framework to support integrative genomics analysis through an easy-to-use Web interface. GenomeSpace provides access to a diverse range of bioinformatics tools, and bridges the gaps between the tools, making it easy to leverage the available analyses and visualizations in each of them. The tools retain their native look and feel, with GenomeSpace providing frictionless conduits between them through a lightweight interoperability layer. GenomeSpace does not perform any analyses itself; these are done within the member tools wherever they live – desktop, Web service, cloud, in-house server, etc. Rather, GenomeSpace provides tool selection and launch capabilities, and acts as a data highway automatically reformatting data as required when results move from the output of one tool to input for the next. The GVL GenomeSpace can be found at
                 <a href="https://genomespace.genome.edu.au">https://genomespace.genome.edu.au</a> .</p>
                 </div>
         <div class="tutorial-section" id="public">
-            <h2><a name="prerquisit"></a>Prerequisites</span></h4>
+            <h2><a name="prerquisit"></a>Prerequisites</h2>
                 <p>GenomeSpace use a few dialogue box to communicate with NeCTAR cloud and if you have an “AdBlocker” on your system the dialogues will not be shown properly. So in case you have an AdBlocker on your system please disable it for GenomeSpace.genome.edu.au domain.</p>
         </div>
         <div class="tutorial-section" id="register">
             <h2>
-                <a name="registering-into-genomespace"></a>Registering into GenomeSpace</span>
-                </h3>
+                <a name="registering-into-genomespace"></a>Registering into GenomeSpace
+                </h2>
                 <p>For registering into GenomeSPace you need to have a valid email address and follow the following steps:</p>
                 <ul>
                     <li>Go to https://genomespace.genome.edu.au/ and click on the Register new GenomeSpace user link:</li>
@@ -72,8 +72,9 @@ $(function(){
                         If everything goes right you will see the following page.</li>
                     
                     <img src="site/media/images/genomespace-tutorial/RegisterComp.png" alt="" />
-                    <li>Go to the email you provided while registering and open the email from GenomeSpace Titled “GenomeSpace user registration” and follow the link in that email. From now on you can login to GenomeSpace by going to <i><a href="https://genomespace.genome.edu.au/"> https://genomespace.genome.edu.au</a><i> .</li>
-                    <li>go to <a href="https://genomespace.genome.edu.au/"> https://genomespace.genome.edu.au</a> and enter your username and password you created in the previous steps. You will be logged in into GenomeSpace.<p> In a few seconds you will be redirected to your Home page.
+                    <li>Go to the email you provided while registering and open the email from GenomeSpace Titled “GenomeSpace user registration” and follow the link in that email. From now on you can login to GenomeSpace by going to <i><a href="https://genomespace.genome.edu.au/"> https://genomespace.genome.edu.au</a></i> .</li>
+                    <li>go to <a href="https://genomespace.genome.edu.au/"> https://genomespace.genome.edu.au</a> and enter your username and password you created in the previous steps. You will be logged in into GenomeSpace.
+                        <p> In a few seconds you will be redirected to your Home page.</p>
                         <img src="site/media/images/genomespace-tutorial/GS explained.png" alt="" />
                         In this page you can find the following items:<ol>
                             <li>  your USERNAME on the top right corner</li>
@@ -85,22 +86,22 @@ $(function(){
                             <li>The directory under the name Shared to “your username” contains any folders that has been shared to you through the GenomeSpace website.</li>
                             <li> The public directory is the directory which contains anything that has been made public to the cloud through the GenomeSpace website.</li>
                         </ul>
-                        </p></li>
+                        </li>
                 </ul>
         </div>
         <div class="tutorial-section" id="swift">
-            <h2><a name="swift"></a>Mounting a swift container</span><h6><i>(This session has written in a way to suit NeCTAR cloud for any other OpenStack based cloud storage please change the parameters as necessary)</i></h6></h4>
-                <p>NeCTAR object storage is a place that people with NeCTAR credentials can store their data reliably. Containers can be found under the Object Store link in NeCTAR’s dashboard. For browsing through available containers go to the NeCTAR dashboard at <a herf="https://dashboard.rc.nectar.org.au">https://dashboard.rc.nectar.org.au </a> and on the left hand side of the page you can find the Object Store. By selecting the container under the object store you can see all the available containers under your tenancy.
+            <h2><a name="swift"></a>Mounting a swift container</h2><i>(This session has written in a way to suit NeCTAR cloud for any other OpenStack based cloud storage please change the parameters as necessary)</i>
+                <p>NeCTAR object storage is a place that people with NeCTAR credentials can store their data reliably. Containers can be found under the Object Store link in NeCTAR’s dashboard. For browsing through available containers go to the NeCTAR dashboard at <a href="https://dashboard.rc.nectar.org.au">https://dashboard.rc.nectar.org.au </a> and on the left hand side of the page you can find the Object Store. By selecting the container under the object store you can see all the available containers under your tenancy.
                 </p>
-                <p>To mount an available container go to Connect menu bar and select Swift Container.
-                <img src="site/media/images/genomespace-tutorial/GS-swift.png" alt="" /> You will see a new page as follows:
+                <p>To mount an available container go to Connect menu bar and select Swift Container.<br>
+                <img src="site/media/images/genomespace-tutorial/GS-swift.png" alt="" /><br> You will see a new page as follows:
                 </p>
                 <img src="site/media/images/genomespace-tutorial/swift-det.png" alt="" />
-                <p> To fill this form you need the following parameters:<ol>
-                    <li>OpenStack EndPoint: It’s predefault value has set to connect to NeCTAR by default. <i> https://keystone.rc.nectar.org.au:5000/v2.0/tokens<i>
+                <p> To fill this form you need the following parameters:</p><ol>
+                    <li>OpenStack EndPoint: It’s predefault value has set to connect to NeCTAR by default. <i> https://keystone.rc.nectar.org.au:5000/v2.0/tokens</i>
                         
                     </li>
-                    <li>NeCTAR UserName: Your username can be found at the top right corner of the NeCTAR dashboard as shown below:<img></img></li>
+                    <li>NeCTAR UserName: Your username can be found at the top right corner of the NeCTAR dashboard as shown below:</li>
                     <img src="site/media/images/genomespace-tutorial/Nectar-user.png" alt="" />
                     <li>You API password: The API key is the key that applications can use to connect to NeCTAR on your behalf. To find your API key do the following steps:
                         <ol type="a">
@@ -117,11 +118,11 @@ $(function(){
                     <li>The container’s name that you want to connect to.
                         <img src="site/media/images/genomespace-tutorial/containers.JPG" alt="" /></li>
                     
-                </ol></p>
+                </ol>
         </div>
         <div class="tutorial-section" id="basic">
-            <h2><a name="basic-file-manipulation"></a>Basic file manipulation</span></h4>
-                <p>Under the containers directory you can do the basic file manipulation as follows:<ul style="list-style-type:disc">
+            <h2><a name="basic-file-manipulation"></a>Basic file manipulation</h2>
+                <p>Under the containers directory you can do the basic file manipulation as follows:</p><ul style="list-style-type:disc">
                     
                     <li> <strong>Create Directory:</strong> For creating a directory under another directory right click on the source directory and select Create Subdirectory item. You will be asked for a name and in a few second your target directory will be created.
                         
@@ -137,17 +138,17 @@ $(function(){
                         
                     </li><li> <strong>Create private link:</strong> The private link can be created by selecting the view file link item under the right click’s items.
                     </li>
-                </ul></p>
+                </ul>
         </div>
         <div class="tutorial-section" id="galaxy">
-            <h2><a name="adding-galaxy"></a>Adding a Galaxy into your account:</span></h4>
+            <h2><a name="adding-galaxy"></a>Adding a Galaxy into your account:</h2>
                 <p><strong>PREREQUISITE: Please make sure you have registered on the Galaxy you want to add to GenomeSpace.</strong></p>
-                <p>The latest GVL image is fully compatible with the GenomeSpace. The Galaxy launched under the GVL can be connected to the GenomeSpace as follows:<ol>
+                <p>The latest GVL image is fully compatible with the GenomeSpace. The Galaxy launched under the GVL can be connected to the GenomeSpace as follows:</p><ol>
                     
-                    <li> From the Menu bar go to the manage menu and select Private Tool.
-                        <img src="site/media/images/genomespace-tutorial/private-tool.png" alt="" />
-                    </li><li>From the opened window press the Add new button.
-                        <img src="site/media/images/genomespace-tutorial/Galaxy.png" alt="" />
+                    <li> From the Menu bar go to the manage menu and select Private Tool.<br>
+                        <img src="site/media/images/genomespace-tutorial/private-tool.png" alt="" /><br>
+                    </li><li>From the opened window press the Add new button.<br>
+                        <img src="site/media/images/genomespace-tutorial/Galaxy.png" alt="" /><br>
                     </li><li> In the new window fill the items as follow:
                         <ul>
                             <li>Give a name to your Galaxy
@@ -165,21 +166,20 @@ $(function(){
                         <p>A sample page can be seen in the following image.</p>
                         <img src="site/media/images/genomespace-tutorial/Galaxy-config.png" alt="" />
                     </li><li> Launching the added Galaxy from GenomeSpace:
-                        From the GenomeSpace click on the Arrow on the right side of your Galaxy application in the Application bar and select launch.Your galaxy will be opened in a new window. (Note: Your browser may block the pop-up. Allow the pop-up accordingly).
-                        <img src="site/media/images/genomespace-tutorial/gal-launch.png" alt="" />
-                    </li><li> From the opened Galaxy login and under your username go to the preferences options
-                        </p>
-                        <img src="site/media/images/genomespace-tutorial/galaxy-set.png" alt="" />
-                        <p> and select the Manage OpenIDs links:
-                        <img src="site/media/images/genomespace-tutorial/galaxy-openid.png" alt="" />
+                        From the GenomeSpace click on the Arrow on the right side of your Galaxy application in the Application bar and select launch.Your galaxy will be opened in a new window. <br>
+                        <img src="site/media/images/genomespace-tutorial/gal-launch.png" alt="" /><br>(Note: Your browser may block the pop-up. Allow the pop-up accordingly).
+                    </li><li> From the opened Galaxy login and under your username go to the preferences options<br>
+                        <img src="site/media/images/genomespace-tutorial/galaxy-set.png" alt="" /><br>
+                        <p> and select the Manage OpenIDs links:<br>
+                        <img src="site/media/images/genomespace-tutorial/galaxy-openid.png" alt="" /><br>
                     </li><li> From the associate more OpenID select the GenomeSpace and press login. Your GenomeSpace will be appear as link on the top as a URL.
                         <img src="site/media/images/genomespace-tutorial/openid-set.png" alt="" />
                     </li>
                 </ol>From now on your Galaxy can talk to the GenomeSpace under your UserName.
-                </p>
+                
         </div>
         <div class="tutorial-section" id="filetransfer">
-            <h2><a name="file-transfer"></a>Sending/Receiving a file into/from Galaxy:</span></h4>
+            <h2><a name="file-transfer"></a>Sending/Receiving a file into/from Galaxy:</h2>
                 <p><strong>PREREQUISITE: Please make sure you have connected your Galaxy to GenomeSpace first (<a href="#galaxy">How to</a>).</strong></p>
                 <ul style="list-style-type:A">
                     <li>Sending A file
