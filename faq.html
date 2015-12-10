@@ -37,10 +37,16 @@ $(function(){
         <a href="#uploaderrors">Broken File Uploads</a>
       </li>
       <li>
+        <a href="#ftp-upload">Password protected ftp import</a>
+      </li>
+      <li>
         <a href="#transfer-galaxy">Transferring Galaxy History</a>
       </li>
       <li>
         <a href="#downloading-galaxy">Downloading Galaxy Files</a>
+      </li>
+      <li>
+        <a href="#runtime">Get job runtime</a>
       </li>
       <li>
         <a href="#denovo">De Novo Transcript Assembly</a>
@@ -116,6 +122,13 @@ $(function(){
         </ul>
       </p>
     </div>
+    <div class="tutorial-section" id="ftp-upload">
+      <h2>Is there a way to import data from a password protected ftp site directly into Galaxy?</h2>
+      <p>Yes, just put your username and password in the URL link:</p>
+      <p><i>ftp://username:password@hostname/path_to_your_data/file.name</i><br></br>
+      Paste the link into <b>Get Data -> URL/Text window</b>
+      </p>
+    </div>
     <div class="tutorial-section" id="transfer-galaxy">
       <h2>How do I transfer Galaxy history between instances?</h2>
       <p>There is no nice clean way to do this in Galaxy because Galaxy zips it up and downloads it for you, but you cannot upload the archived history file to a new instance, you can only import a URL history archive. (browsers can't upload files larger than 2GB and real histories are likely to be large).</p>
@@ -149,6 +162,7 @@ $(function(){
         <li>Paste the URL into your web browser to download the file.</li>
       </ul>
     </div>
+
     <div class="tutorial-section" id="denovo">
       <h2>How do I do De Novo transcript assembly with Trinity and read normalisation?</h2>
       <p>Trinity read normalisation improves the run time for transcript assembly, and it is recommended for large datasets.</p>
@@ -171,7 +185,15 @@ $(function(){
         <a class="external text" href="http://galaxy-qld.genome.edu.au/" rel="nofollow">Galaxy-qld</a>: Shared Data &gt; Published Workflows &gt; Preparation of FASTQ reads for Trinity read normalisation.</li>
       </ul>
     </div>
-
+    <div class="tutorial-section" id="runtime">
+      <h2>Is there a way to get the queue time and run time for a job in Galaxy?</h2>
+      <p>Yes for run time, no for queue time. Do the following:</p>
+      <p><ul>
+        <li>Click on the <b>filename</b> of one of the output files for the job of interest.</li>
+        <li>Click on the <b>information</b> button "i". The runtime (walltime) is listed near the bottom of the screen.</li>
+      </ul>
+      </p>
+    </div>
     <div class="tutorial-section" id="meme">
       <h2>How do I resolve MEME Errors?</h2>
       <p>MEME has a limit on total length of sequences: "The sequences may contain no more than 60,000 characters total and must be in FASTA format".</p>
@@ -192,7 +214,20 @@ The files have to be purged from each history separately.
 Use ‘Delete Permanently’ option for histories. To find deleted but not purged histories: History Menu > Saved Histories > Advanced Search > deleted
       </div>
     </div>
-
+    <div class="tutorial-section" id="ftp-upload">
+      <h2>Is there a way to resume a partially complete workflow in Galaxy?</h2>
+      <p>Sort of. You need to create a new workflow with non-completed steps and run it over the completed dataset.</p>
+      <p><ol>
+        <li>Go to the workflows page via the <b>Workflows</b> menu</li>
+        <li>Click on the down arrow on the workflow you wish to resume to access its menu. Select <b>Copy</b></li>
+        <li>Open the copy of the workflow by selecting <b>Edit</b> from its menu.</li>
+        <li>Remove the completed steps (click to select and then delete)</li>
+        <li><b>Save</b> the modified workflow</li>
+        <li><b>Run</b> the modified workflow with the datasets produced by the partially complete workflow.</li>
+        <li>You'll have to delete the non-completed 'grey' datasets from the first attempt.</li>
+      </ol>
+      </p>
+    </div>
     <div class="tutorial-section" id="version">
       <h2>What GVL Version am I using?</h2>
       <p>A GVL analysis server consists of three components:</p>
