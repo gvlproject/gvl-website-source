@@ -52,10 +52,10 @@ $(function(){
         <a href="#denovo">De Novo Transcript Assembly</a>
       </li>
       <li>
-        <a href="#meme">MEME Errors</a>
+        <a href="#version">GVL Version</a>
       </li>
       <li>
-        <a href="#version">GVL Version</a>
+        <a href="#ssherrors">SSH errors</a>
       </li>
     </ul>
   </div>
@@ -194,12 +194,6 @@ $(function(){
       </ul>
       </p>
     </div>
-    <div class="tutorial-section" id="meme">
-      <h2>How do I resolve MEME Errors?</h2>
-      <p>MEME has a limit on total length of sequences: "The sequences may contain no more than 60,000 characters total and must be in FASTA format".</p>
-      <p>In some cases sequences can be trimmed on both sides without compromising protein binding sites. Workflow 'Trim multiple sequences on both ends by 10nt' is available on
-      <a href="http://galaxy-qld.genome.edu.au/" target="_blank">Galaxy-qld</a>in Shared Data &gt; Published Workflows.</p>
-    </div>
     <div class="tutorial-section" id="diskquotas">
       <a name="diskquoatas"></a><h2>Disk quotas for Australian researchers on Galaxy-qld</h2>
       After registration on Galaxy-qld all new users are assigned 200 GB disk quota. Later we allocate more disk space for Australian and UQ users. This is usually happen within one working day after the registration. The disk quota can be seen at the top Galaxy menu User > Preferences
@@ -250,6 +244,11 @@ Use ‘Delete Permanently’ option for histories. To find deleted but not purge
       </ul>
       <p>For more information refer to
       <a href="launch-version">GVL versions.</a></p>
+    </div>
+    <div class="tutorial-section" id="ssherrors">
+      <h2>When accessing my NeCTAR instance via SSH, why am I getting a permission denied (publickey) error?</h2>
+      <p>A permission denied (publickey) error typically means the private key is not a correct match for the public key.</p>
+      <p>When creating a keypair on NeCTAR, only the most recent downloaded version of the private key is correct. Please ensure you only use this version of the private key.</p>
     </div>
     <br style="clear:both;" />
   </div>
